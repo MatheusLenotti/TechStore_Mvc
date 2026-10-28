@@ -1,0 +1,32 @@
+@model TechStoreMVC.Models.Produto
+
+    @{
+        ViewData[index: "Title"] = "Detalhes do Produto";
+    }
+
+    <h1> 
+        lista de produtos
+    </h1>
+
+    <dl class="row">
+       <dt class="col-sm-2">Nome</dt>
+       <dd class="col-sm-10">@Model.Nome</dd>
+
+       <dt class="col-sm-2">Preço</dt>
+       <dd class="col-sm-10">@Model.Preco.ToString("C")</dd>
+
+       <dt class="col-sm-2">Estoque</dt>
+       <dd class="col-sm-10">@Model.Estoque</dd>
+    </dl>
+
+<a asp-action="Edit"
+   asp-route-id="@Model.Id"
+    class="btn btn-warning">
+    Editar
+</a>
+
+<a asp-action="Index"
+   asp-route-id="@Model.Id"
+    class="btn btn-warning">
+    Voltar
+</a>
